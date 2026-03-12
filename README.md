@@ -1,9 +1,9 @@
 # Emby-Lastfm-TUI
 A simple Go program written by AI to play and scrobble music in your Emby server, with ~15MiB of RAM usage. 
 
-Below only works on Windows; Linux users should be able to figure it out by themselves. (Mac? Really?)
+*Other than compile it yourself, you can download the compiled version along with the config & Powershell script in the releases. (mpv is still required.)*
 
-Other than compile it yourself, you can download the compiled version along with the config & Powershell script in the releases.
+Below only works on Windows; Linux users should be able to figure it out by themselves. (*Mac? Really?*)
 
 ## Prerequisite
 Go and mpv installed, and add to PATH 
@@ -26,7 +26,7 @@ In the folder:
 go mod tidy 
 go build ./cmd/emby-tui
 ``` 
-If you didn't do anything wrong, a file called "emby-tui" should appear. Rename it to "emby-tui.exe". 
+If you didn't do anything wrong, a file called "emby-tui.exe" should appear.
 ## Config 
 Follow the instructions below or in the JSON file:
 ```json 
@@ -58,6 +58,8 @@ After you run the PowerShell script, everything should be filled, and you are go
 - The shuffle mode sometimes shuffles too much, such is life, I suppose?
 - Change the font of the command window if some words refuse to render.
 ### Changelog?
+- ver2.1
+    - Binary release
 - ver2.0
     - Fixed many problems related to the display & progress bar
     - Added more functionality to the `DEL` and the `s` key 

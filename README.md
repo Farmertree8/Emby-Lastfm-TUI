@@ -1,7 +1,7 @@
 # Emby-Lastfm-TUI
 A simple Go program written by AI to play and scrobble music in your Emby server, with ~15MiB of RAM usage. 
 
-Below only works on windows, Linux users should able to figure it out by yourself.
+Below only works on Windows; Linux users should be able to figure it out by themselves. (Mac? Really?)
 
 ## Prerequisite
 Go and mpv installed, and add to PATH 
@@ -22,11 +22,11 @@ cd Emby-Lastfm-TUI
 In the folder:
 ```bash 
 go mod tidy 
-go build -o emby-tui ./cmd/emby-tui
+go build ./cmd/emby-tui
 ``` 
 If you didn't do anything wrong, a file called "emby-tui" should appear. Rename it to "emby-tui.exe". 
 ## Config 
-Follow the instructions below or in the json file:
+Follow the instructions below or in the JSON file:
 ```json 
 {
   "emby_url": "http://localhost:8096",
@@ -40,22 +40,30 @@ Follow the instructions below or in the json file:
 ``` 
 After you run the PowerShell script, everything should be filled, and you are good to go! (no pun intended)
 ## How to use 
-- Enter to play/select 
-  - n for Normal playback 
-  - s for Shuffle
-- Backspace to go back 
-- Left click to pause?
-- q for exiting the program after the song finishes playing
-- All others are written on there, duh
+- `Enter` or `Space` to play/select 
+  - `n` for Normal playback 
+  - `s` for Shuffle
+- `s` is also for skipping songs
+- `Backspace` to go back 
+- `DEL` to clear the current queue
+- `q` for exiting the program after the song finishes playing
+- All others are written on there
 
 ## Known issues
-- The command line output overwrites the song list; press `?` twice to refresh it. 
-- You can not select another song when another song is playing; just close & reopen the program. 
+- Sometimes when switching pages, song lists misalign and text overlaps; press `?` twice to refresh it.
+- You can not select another song when another song is playing; press DEL before doing that
 - mpv might use a lot of RAM; installing "Mem Reduct" helps.
 - The shuffle mode sometimes shuffles too much, such is life, I suppose?
-- Change your font of the command window if some refuse to render 
+- Change the font of the command window if some words refuse to render.
+### Changelog?
+- ver2.0
+    - Fixed many problems related to the display & progress bar
+    - Added more functionality to the `DEL` and the `s` key 
+- ver1.0 
+    - ~~Where all miracles started, duh~~
 ## Other 
 - Why upload a vibe-coded program? 
-    Others might need it; instead of vide-code another one, just use this one (works!), and save tokens. 
-- There is a icon file in the folder, you can use it to change the boring(?) icon.
+    - Others might need it; instead of vide-code another one, just use this one (works!), and save tokens. 
+- There is an icon file in the folder, you can use it to change the boring(?) icon.
 - You are free to contribute; either vibe-coded or skill-coded contributions work.
+    - Be careful not to upload your api keys tho.

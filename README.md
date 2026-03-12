@@ -3,6 +3,8 @@ A simple Go program written by AI to play and scrobble music in your Emby server
 
 Below only works on Windows; Linux users should be able to figure it out by themselves. (Mac? Really?)
 
+Other than compile it yourself, you can download the compiled version along with the config & Powershell script in the releases.
+
 ## Prerequisite
 Go and mpv installed, and add to PATH 
 (and git, of course)

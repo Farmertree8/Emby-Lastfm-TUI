@@ -1,0 +1,9 @@
+{
+  "emby_url": "http://localhost:8096",
+  "emby_api_key": "API-KEY-GENERATE-IN-CONTROL-PANEL",
+  "user_id": "EDIT-USER-TO-SEE-IN-THE-URL",
+
+  "lastfm_api_key": "APPLY-FROM-LASTFM",
+  "lastfm_secret": "FILL-THE-SECRET-HERE",
+  "lastfm_session_key": "RUN-THE-POWERSHELL-SCRIPT-AFTER-FINISHING-ABOVE-AND-SAVED"
+}

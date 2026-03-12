@@ -14,30 +14,32 @@ import (
 
 func main() {
 
- cfg, err := config.Load("config.json")
- if err != nil {
-  log.Fatal(err)
- }
+	cfg, err := config.Load("config.json")
+	if err != nil {
+		log.Fatal(err)
+	}
 
- embyClient := emby.New(
-  cfg.EmbyURL,
-  cfg.EmbyAPIKey,
-  cfg.UserID,
- )
+	embyClient := emby.New(
+		cfg.EmbyURL,
+		cfg.EmbyAPIKey,
+		cfg.UserID,
+	)
 
- lastfmClient := lastfm.New(
-  cfg.LastFMApiKey,
-  cfg.LastFMSecret,
-  cfg.LastFMSessionKey,
- )
+	lastfmClient := lastfm.New(
+		cfg.LastFMApiKey,
+		cfg.LastFMSecret,
+		cfg.LastFMSessionKey,
+	)
 
- player := player.New(embyClient, lastfmClient)
+	p := player.New(embyClient, lastfmClient)
 
- model := ui.NewModel(embyClient, player)
+	model := ui.NewModel(embyClient, p)
 
- program := tea.NewProgram(model, tea.WithAltScreen())
+	program := tea.NewProgram(model, tea.WithAltScreen())
 
- if err := program.Start(); err != nil {
-  log.Fatal(err)
- }
+	model.SetProgram(program)
+
+	if err := program.Start(); err != nil {
+		log.Fatal(err)
+	}
 }

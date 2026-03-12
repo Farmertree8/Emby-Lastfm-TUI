@@ -51,7 +51,7 @@ func (c *Client) GetLibraries() ([]Item, error) {
 func (c *Client) GetItems(parent string) ([]Item, error) {
 
 	url := fmt.Sprintf(
-		"%s/Users/%s/Items?ParentId=%s&api_key=%s",
+		"%s/Users/%s/Items?ParentId=%s&api_key=%s&SortBy=DateCreated&SortOrder=Descending",
 		c.BaseURL,
 		c.UserID,
 		parent,
